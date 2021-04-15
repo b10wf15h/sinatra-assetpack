@@ -17,7 +17,7 @@ module Sinatra
     def self.tilt_formats
       @formats ||= begin
         hash = Hash.new
-        Tilt.mappings.each do |format, (engine, _)|
+        Tilt.default_mapping.each do |format, (engine, _)|
           # @todo Remove when fix is merged in tilt
           # https://github.com/rtomayko/tilt/pull/206
           next if engine.nil? 
